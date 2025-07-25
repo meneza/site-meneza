@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meneza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Imagens/favicon.png" type="image/png" />
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="logo-link">
+      <img src="Imagens/logo.png" alt="Logo da Loja" class="logo" />
+    </a>
+
+    <div class="nav-links">
+      <a href="catálogo.html">CATÁLOGO</a>
+      <a href="quemsomos.html">QUEM SOMOS</a>
+      <a href="faleconosco.html">FALE CONOSCO</a>
+    </div>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar produtos..."
+      />
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section style="max-width: 800px; margin: auto; padding: 1rem; line-height: 1.6; color: #444;">
+    <h3>Nossa missão é vestir mulheres que buscam conforto mas não abrem mão da autenticidade em seu dia a dia.</h3>
+    <h3>Nossos produtos são desenvolvidos pensando na sua liberdade de movimento e desempenho.</h3>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Meneza. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  const barraDeBusca = document.querySelector('.search-container');
+  if (barraDeBusca) {
+    barraDeBusca.style.display = "none";
+  }
+</script>
+</body>
+</html>

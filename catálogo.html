@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meneza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Imagens/favicon.png" type="image/png" />
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="logo-link">
+      <img src="Imagens/logo.png" alt="Logo da Loja" class="logo" />
+    </a>
+
+    <div class="nav-links">
+      <a href="catálogo.html">CATÁLOGO</a>
+      <a href="quemsomos.html">QUEM SOMOS</a>
+      <a href="faleconosco.html">FALE CONOSCO</a>
+    </div>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar produtos..."
+      />
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="product-grid">
+    <div class="product-card">
+      <img src="Imagens/toppreto.jpg" alt="tp" />
+      <h3 class="product-name">Top Médio Suporte Preto</h3>
+      <a href="#">Ver na Shopee</a>
+    </div>
+    <div class="product-card">
+      <img src="Imagens/toprosa.jpg" alt="tr" />
+      <h3 class="product-name">Top Médio Suporte Rosa</h3>
+      <a href="#">Ver na Shopee</a>
+    </div>
+    <div class="product-card">
+      <img src="Imagens/topbranco.jpg" alt="tb" />
+      <h3 class="product-name">Top Baixo Suporte Branco</h3>
+      <a href="#">Ver na Shopee</a>
+    </div>
+    <div class="product-card">
+      <img src="Imagens/shortsaiabranco.jpg" alt="ssb" />
+      <h3 class="product-name">Short Saia Branco Liso</h3>
+      <a href="#">Ver na Shopee</a>
+    </div>
+    <div class="product-card">
+      <img src="" alt="Produto 5" />
+      <h3 class="product-name">EM BREVE</h3>
+
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x400" alt="Produto 6" />
+      <h3 class="product-name">EM BREVE</h3>
+
+    </div>
+    <div class="product-card">
+      <img src="" alt="Produto 7" />
+      <h3 class="product-name">EM BREVE</h3>
+
+    </div>
+    <div class="product-card">
+      <img src="" alt="Produto 8" />
+      <h3 class="product-name">EM BREVE</h3>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Meneza. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  function shuffleProducts() {
+    const grid = document.querySelector('.product-grid');
+    const products = Array.from(grid.children);
+
+    for (let i = products.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [products[i], products[j]] = [products[j], products[i]];
+    }
+
+    grid.innerHTML = '';
+    products.forEach(product => grid.appendChild(product));
+  }
+
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      const filter = this.value.toLowerCase();
+      const products = document.querySelectorAll('.product-card');
+
+      products.forEach(product => {
+        const name = product.querySelector('.product-name').textContent.toLowerCase();
+        product.style.display = name.includes(filter) ? '' : 'none';
+      });
+    });
+  }
+
+  document.querySelectorAll('.product-card img').forEach(img => {
+    if (!img.getAttribute('src') || img.getAttribute('src').trim() === '') {
+      img.src = 'Imagens/placeholder.jpg';
+    }
+    img.onerror = function () {
+      this.onerror = null;
+      this.src = 'Imagens/placeholder.jpg';
+    };
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    shuffleProducts();
+  });
+</script>
+<script src="header-scroll.js"></script>
+</body>
+</html>

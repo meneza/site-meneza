@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meneza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Imagens/favicon.png" type="image/png" />
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="logo-link">
+      <img src="Imagens/logo.png" alt="Logo da Loja" class="logo" />
+    </a>
+
+    <div class="nav-links">
+      <a href="catálogo.html">CATÁLOGO</a>
+      <a href="quemsomos.html">QUEM SOMOS</a>
+      <a href="faleconosco.html">FALE CONOSCO</a>
+    </div>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar produtos..."
+      />
+    </div>
+  </nav>
+</header>
+
+  <main>
+    <section class="contact-info">
+      <h2>Dúvidas? Entre em contato com a gente!</h2>
+      <h3>andressa@meneza.com</h3>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Meneza. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const barraDeBusca = document.querySelector('.search-container');
+    if (barraDeBusca) {
+      barraDeBusca.style.display = "none";
+    }
+  </script>
+</body>
+</html>
